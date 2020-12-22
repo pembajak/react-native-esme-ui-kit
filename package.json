@@ -1,5 +1,5 @@
 {
-  "name": "react-native-esme-ui-kit",
+  "name": "@pembajak/react-native-esme-ui-kit",
   "version": "0.1.2",
   "description": "UI Kit for personal use",
   "main": "lib/commonjs/index",
