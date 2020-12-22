@@ -23,6 +23,7 @@
   ],
   "scripts": {
     "test": "jest",
+    "images": "node scripts/images.js",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
@@ -149,5 +150,12 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "react-native-elements": "^3.0.1",
+    "react-native-extended-stylesheet": "^0.12.0",
+    "react-native-fast-image": "^8.3.4",
+    "react-native-root-toast": "^3.2.1",
+    "react-native-shadow": "^1.2.2"
   }
 }
