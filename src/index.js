@@ -41,4 +41,7 @@ module.exports = {
     get Header() {
         return require('./Header').default;
     },
+    get CollapseToolbar() {
+        return require('./CollapseToolbar').default;
+    },
 }
