@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {  Dimensions } from 'react-native';
+import { Dimensions } from 'react-native';
 import { Container, Header } from '@pembajak/react-native-esme-ui-kit';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -23,4 +23,3 @@ export default function App() {
     </Container>
   );
 }
-
