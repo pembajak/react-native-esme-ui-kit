@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, ScrollView, Dimensions } from 'react-native';
 
-import { Header } from './Header';
+import Header from './Header';
 
-import { Container } from './Container';
+import Container from './Container';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 

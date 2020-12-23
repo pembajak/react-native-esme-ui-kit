@@ -9,4 +9,4 @@ class Input extends React.Component {
   }
 }
 
-export default Input
+export default Input;

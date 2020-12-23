@@ -53,4 +53,4 @@ class HeaderTitle extends Component {
   }
 }
 
-export default HeaderTitle
+export default HeaderTitle;

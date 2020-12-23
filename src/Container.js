@@ -31,4 +31,4 @@ const styles = EStyleSheet.create({
   },
 });
 
-export default Container
+export default Container;
