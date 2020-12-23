@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { StyleSheet, Dimensions } from 'react-native';
+import {  Dimensions } from 'react-native';
 import { Container, Header } from '@pembajak/react-native-esme-ui-kit';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -24,15 +24,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
