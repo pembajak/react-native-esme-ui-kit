@@ -1,21 +1,18 @@
 import React from 'react';
-import { 
-    View, 
-} from 'react-native';
+import { View } from 'react-native';
 
-const Divider = ({
-    height=5,
-    backgroundColor='#F7F7FA',
-    style
-}) => {
-    return(
-        <View style={[{
-            backgroundColor:backgroundColor,
-            height:height
-        },style]}></View>
-    )
-}
+const Divider = ({ height = 5, backgroundColor = '#F7F7FA', style }) => {
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: backgroundColor,
+          height: height,
+        },
+        style,
+      ]}
+    />
+  );
+};
 
-export {
-    Divider
-}
+export default Divider;
