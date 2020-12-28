@@ -38,4 +38,7 @@ module.exports = {
   get Header() {
     return require('./Header').default;
   },
+  get TimePicker() {
+    return require('./TimePicker').default;
+  },
 };
