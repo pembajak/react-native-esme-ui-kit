@@ -29,14 +29,45 @@ const styles = EStyleSheet.create({
   },
 });
 
+const FooterShadowConatiner = (props) => {
+  const { footerShadowColor, footerHeight, children } = props;
+
+  const shadowOpt = {
+    width: Dimensions.get('window').width,
+    height: footerHeight,
+    color: footerShadowColor,
+    border: 4,
+    radius: 1,
+    opacity: 0.15,
+    x: 0,
+    y: -2,
+  };
+
+  return (
+    <BoxShadow setting={shadowOpt}>
+      <View
+        style={{
+          backgroundColor: '#FFFFFF',
+          flex: 1,
+        }}
+      >
+        {children}
+      </View>
+    </BoxShadow>
+  );
+};
+
 class CollapseToolbar extends Component {
   static defaultProps = {
     toolbarIconRight: <View />,
     transToolbarRight: <View />,
     headerTitle: '',
-    footer: <View />,
+    footer: undefined,
     transToolbar: undefined,
     toolbar: undefined,
+    useFooterShadow: false,
+    footerShadowColor: '#566E94',
+    footerHeight: 80,
   };
 
   layout = {};
@@ -156,7 +187,15 @@ class CollapseToolbar extends Component {
         </ScrollView>
         {!this.state.isTransHeaderShow && this.renderTransToolbar()}
         {this.state.isTransHeaderShow && this.renderToolbar()}
-        {this.props.footer}
+        {!this.props.useFooterShadow && this.props.footer}
+        {this.props.useFooterShadow && this.props.footer !== undefined && (
+          <FooterShadowConatiner
+            footerShadowColor={this.props.footerShadowColor}
+            footerHeight={this.props.footerHeight}
+          >
+            {this.props.footer}
+          </FooterShadowConatiner>
+        )}
       </Container>
     );
   }

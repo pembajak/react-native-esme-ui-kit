@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import { Dimensions } from 'react-native';
+import { Dimensions, View, Text } from 'react-native';
 import {
   Container,
   Header,
   TimePicker,
+  CollapseToolbar,
 } from '@pembajak/react-native-esme-ui-kit';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -24,14 +25,30 @@ export default function App() {
   React.useEffect(() => {}, []);
 
   return (
-    <Container>
-      <Header>test</Header>
-      <TimePicker
-        containerStyle={{
-          padding: 16,
-        }}
-      />
+    <CollapseToolbar
+      useFooterShadow={true}
+      footer={
+        <View>
+          <Text>test</Text>
+        </View>
+      }
+      transToolbar={<Header>TEST TEST</Header>}
+      title={'TEST TEST'}
+    >
+      <View>
+        <TimePicker
+          containerStyle={{
+            padding: 16,
+          }}
+        />
+        <TimePicker
+          containerStyle={{
+            padding: 16,
+          }}
+        />
+      </View>
+
       <RootSiblingParent />
-    </Container>
+    </CollapseToolbar>
   );
 }
