@@ -10,7 +10,7 @@ const styles = EStyleSheet.create({
     fontSize: '16rem',
   },
   title: {
-    fontSize: '14rem',
+    fontSize: '20rem',
     fontWeight: 'bold',
   },
   icon: {
