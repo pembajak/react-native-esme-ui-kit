@@ -33,12 +33,16 @@ class HorizontalTab extends Component {
     textColor: PropTypes.string,
     onTabPress: PropTypes.func,
     selectedIndex: PropTypes.number,
+    selectedStyle: PropTypes.object,
+    unSelectedStyle: PropTypes.object,
   };
   static defaultProps = {
     indicatorColor: '#E74C3C',
     selectedTextColor: '#E74C3C',
     textColor: '#BDC3C7',
     onTabPress: undefined,
+    selectedStyle: undefined,
+    unSelectedStyle: undefined,
   };
 
   state = {
@@ -81,6 +85,11 @@ class HorizontalTab extends Component {
             this.state.selectedIndex == index
               ? this.props.selectedTextColor
               : this.props.textColor;
+
+          var userStyle =
+            this.state.selectedIndex == index
+              ? this.props.selectedStyle
+              : this.props.unSelectedStyle;
           return (
             <Pressable onPress={() => this._onTabPress(index)}>
               <View
@@ -89,6 +98,7 @@ class HorizontalTab extends Component {
                   {
                     width: buttonWidth,
                   },
+                  userStyle,
                 ]}
               >
                 <Text
