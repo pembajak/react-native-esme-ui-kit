@@ -40,6 +40,7 @@ const Header = ({
   leftIcon,
   onLayout,
   accentColor = '#C33427',
+  titleColor = 'black',
   rightIcon,
 }) => {
   var _leftIcon =
@@ -118,7 +119,9 @@ const Header = ({
             ]}
           >
             {typeof children === 'string' && (
-              <Text style={styles.title}>{children}</Text>
+              <Text style={[styles.title, { color: titleColor }]}>
+                {children}
+              </Text>
             )}
 
             {typeof children !== 'string' && children}
