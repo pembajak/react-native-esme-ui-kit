@@ -151,6 +151,7 @@
     "react-native-elements": "^3.0.1",
     "react-native-extended-stylesheet": "^0.12.0",
     "react-native-fast-image": "^8.3.4",
+    "react-native-image-gallery": "^2.1.5",
     "react-native-modal-datetime-picker": "^9.1.0",
     "react-native-root-siblings": "^4.1.0",
     "react-native-root-toast": "^3.2.1",

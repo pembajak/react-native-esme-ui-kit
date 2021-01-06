@@ -41,8 +41,10 @@ module.exports = {
   get TimePicker() {
     return require('./TimePicker').default;
   },
-
   get BoxContainer() {
     return require('./BoxContainer').default;
+  },
+  get GalleryImages() {
+    return require('./GalleryImages').default;
   },
 };
