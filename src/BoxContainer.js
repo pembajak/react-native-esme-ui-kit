@@ -11,6 +11,8 @@ const styles = EStyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#F1F1F1',
     paddingBottom: '14rem',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
   },
   title: {
     fontSize: '16rem',
@@ -19,13 +21,14 @@ const styles = EStyleSheet.create({
   },
 });
 
-const BoxContainer = ({ title, titleChild, children }) => {
+const BoxContainer = ({ title, titleChild, children, rightComponent }) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.titleContainer}>
         {titleChild !== undefined && titleChild}
 
         {title !== undefined && <Text style={styles.title}>{title}</Text>}
+        {rightComponent !== undefined && rightComponent}
       </View>
       <View>{children}</View>
     </View>
