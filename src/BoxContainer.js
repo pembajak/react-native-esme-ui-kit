@@ -21,9 +21,15 @@ const styles = EStyleSheet.create({
   },
 });
 
-const BoxContainer = ({ title, titleChild, children, rightComponent }) => {
+const BoxContainer = ({
+  style,
+  title,
+  titleChild,
+  children,
+  rightComponent,
+}) => {
   return (
-    <View style={styles.mainContainer}>
+    <View style={[styles.mainContainer, style]}>
       <View style={styles.titleContainer}>
         {titleChild !== undefined && titleChild}
 
