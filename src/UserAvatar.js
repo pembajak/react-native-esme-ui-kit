@@ -4,7 +4,7 @@ import FastImage from 'react-native-fast-image';
 
 import { View, Text, Pressable } from 'react-native';
 
-import { Image } from './Image';
+import Image from './Image';
 
 const defaultColors = [
   '#ff5252',
