@@ -68,6 +68,7 @@ class CollapseToolbar extends Component {
     useFooterShadow: false,
     footerShadowColor: '#566E94',
     footerHeight: 80,
+    isFloating: false,
   };
 
   layout = {};
@@ -171,6 +172,10 @@ class CollapseToolbar extends Component {
   }
 
   render() {
+    const { isFloating } = this.props;
+
+    const contentTop = !isFloating ? this.state.headerHeight : 0;
+
     return (
       <Container>
         <ScrollView onScroll={this._onScroll}>
@@ -178,7 +183,7 @@ class CollapseToolbar extends Component {
             style={[
               styles.mainContainer,
               {
-                marginTop: this.state.headerHeight,
+                marginTop: contentTop,
               },
             ]}
           >
