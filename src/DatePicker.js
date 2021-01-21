@@ -16,12 +16,16 @@ const DatePicker = forwardRef((props, ref) => {
     textStyle,
     caretColor = '#C33427',
     caretSize = 10,
-    format = 'dd MMM YYYY',
+    format = 'dddd, DD MMM yyyy',
+    date = undefined,
+    onDateChange = undefined,
   } = props;
 
-  const [time, setTime] = useState(new Date());
+  const value = date == undefined ? new Date() : date;
+
+  const [time, setTime] = useState(value);
   const [formatedTime, setFormatedTime] = useState(
-    moment(new Date()).format(format)
+    moment(value).format(format)
   );
   let sibling;
 
@@ -35,6 +39,7 @@ const DatePicker = forwardRef((props, ref) => {
           onConfirm={(date) => {
             setTime(date);
             setFormatedTime(moment(date).format(format));
+            onDateChange && onDateChange(date);
             sibling && sibling.destroy();
           }}
           onCancel={() => {
