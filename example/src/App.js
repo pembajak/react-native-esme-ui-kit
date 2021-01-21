@@ -6,6 +6,7 @@ import {
   Header,
   TimePicker,
   CollapseToolbar,
+  DatePicker,
 } from '@pembajak/react-native-esme-ui-kit';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -36,12 +37,7 @@ export default function App() {
       title={'TEST TEST'}
     >
       <View>
-        <TimePicker
-          containerStyle={{
-            padding: 16,
-          }}
-        />
-        <TimePicker
+        <DatePicker
           containerStyle={{
             padding: 16,
           }}

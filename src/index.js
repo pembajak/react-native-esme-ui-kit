@@ -47,4 +47,7 @@ module.exports = {
   get GalleryImages() {
     return require('./GalleryImages').default;
   },
+  get DatePicker() {
+    return require('./DatePicker').default;
+  },
 };

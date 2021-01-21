@@ -2,23 +2,12 @@
   "name": "@pembajak/react-native-esme-ui-kit",
   "version": "0.5.5",
   "description": "UI Kit for personal use",
-  "main": "lib/commonjs/index.js",
-  "module": "lib/module/index.js",
+  "main": "lib/module/index.js",
   "react-native": "src/index",
   "source": "src/index",
   "files": [
     "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "react-native-esme-ui-kit.podspec",
-    "!lib/typescript/example",
-    "!android/build",
-    "!ios/build",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__"
+    "lib"
   ],
   "scripts": {
     "test": "jest",
@@ -141,7 +130,6 @@
     "source": "src",
     "output": "lib",
     "targets": [
-      "commonjs",
       "module"
     ]
   },
