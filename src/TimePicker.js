@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import React, { useState, forwardRef, useEffect, useCallback } from 'react';
 import { Text, Pressable } from 'react-native';
 
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -15,13 +15,22 @@ const TimePicker = forwardRef((props, ref) => {
     textStyle,
     caretColor = '#C33427',
     caretSize = 10,
+    value = undefined,
+    onTimeChange = undefined,
   } = props;
 
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(value);
   const [formatedTime, setFormatedTime] = useState(
-    moment(new Date()).format('hh:mm')
+    moment(new Date()).format('HH:mm')
   );
+
   let sibling;
+
+  const onInit = function () {
+    if (value !== undefined) setFormatedTime(moment(value).format('HH:mm'));
+  };
+
+  useEffect(onInit, [onInit]);
 
   function _addModalTimePicker() {
     sibling = new RootSiblings(
@@ -32,7 +41,8 @@ const TimePicker = forwardRef((props, ref) => {
           date={time}
           onConfirm={(date) => {
             setTime(date);
-            setFormatedTime(moment(date).format('hh:mm'));
+            setFormatedTime(moment(date).format('HH:mm'));
+            onTimeChange && onTimeChange(date);
             sibling && sibling.destroy();
           }}
           onCancel={() => {
@@ -57,7 +67,8 @@ const TimePicker = forwardRef((props, ref) => {
         containerStyle,
       ]}
     >
-      <Text style={textStyle}>{formatedTime}</Text>
+      {time && <Text style={textStyle}>{formatedTime}</Text>}
+      {!time && <Text style={textStyle} />}
       <Icon color={caretColor} size={caretSize} name={'caretdown'} />
     </Pressable>
   );
