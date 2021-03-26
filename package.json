@@ -1,6 +1,6 @@
 {
   "name": "@pembajak/react-native-esme-ui-kit",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "UI Kit for personal use",
   "main": "lib/module/index.js",
   "react-native": "src/index",
