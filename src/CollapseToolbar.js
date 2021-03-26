@@ -69,6 +69,7 @@ class CollapseToolbar extends Component {
     footerShadowColor: '#566E94',
     footerHeight: 80,
     isFloating: false,
+    refreshControl: undefined,
   };
 
   layout = {};
@@ -178,7 +179,10 @@ class CollapseToolbar extends Component {
 
     return (
       <Container>
-        <ScrollView onScroll={this._onScroll}>
+        <ScrollView
+          onScroll={this._onScroll}
+          refreshControl={this.props.refreshControl}
+        >
           <View
             style={[
               styles.mainContainer,
