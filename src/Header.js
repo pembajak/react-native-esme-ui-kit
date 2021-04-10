@@ -98,7 +98,10 @@ const Header = ({
           ]}
         >
           {typeof children === 'string' && (
-            <Text style={[styles.title, { color: titleColor }]}>
+            <Text
+              numberOfLines={1}
+              style={[styles.title, { color: titleColor }]}
+            >
               {children}
             </Text>
           )}
