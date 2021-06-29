@@ -5,6 +5,8 @@ import Gallery from 'react-native-image-gallery';
 
 import Header from './Header';
 
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+
 class GalleryImages extends Component {
   render() {
     const { navigation, title = 'Photo', accentColor = '#FFFFFF' } = this.props;
@@ -35,6 +37,7 @@ class GalleryImages extends Component {
             position: 'absolute',
             left: 0,
             right: 0,
+            marginTop: getStatusBarHeight(),
           }}
           navigation={navigation}
         >
