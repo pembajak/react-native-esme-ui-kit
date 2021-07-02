@@ -13,6 +13,8 @@ import Image from './Image';
 
 import { BoxShadow } from 'react-native-shadow';
 
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
 const styles = EStyleSheet.create({
   navBack: {
     height: '30rem',
@@ -180,7 +182,7 @@ class CollapseToolbar extends Component {
 
     return (
       <Container style={containerStyle}>
-        <ScrollView
+        <KeyboardAwareScrollView
           onScroll={this._onScroll}
           refreshControl={this.props.refreshControl}
         >
@@ -194,7 +196,7 @@ class CollapseToolbar extends Component {
           >
             {this.props.children}
           </View>
-        </ScrollView>
+        </KeyboardAwareScrollView>
         {!this.state.isTransHeaderShow && this.renderTransToolbar()}
         {this.state.isTransHeaderShow && this.renderToolbar()}
         {!this.props.useFooterShadow && this.props.footer}
