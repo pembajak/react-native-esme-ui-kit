@@ -70,6 +70,7 @@ class CollapseToolbar extends Component {
     footerHeight: 80,
     isFloating: false,
     refreshControl: undefined,
+    containerStyle: undefined,
   };
 
   layout = {};
@@ -173,12 +174,12 @@ class CollapseToolbar extends Component {
   }
 
   render() {
-    const { isFloating } = this.props;
+    const { isFloating, containerStyle } = this.props;
 
     const contentTop = !isFloating ? this.state.headerHeight : 0;
 
     return (
-      <Container>
+      <Container style={containerStyle}>
         <ScrollView
           onScroll={this._onScroll}
           refreshControl={this.props.refreshControl}
