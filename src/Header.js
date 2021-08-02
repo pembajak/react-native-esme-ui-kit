@@ -18,6 +18,7 @@ const styles = EStyleSheet.create({
   title: {
     fontSize: '20rem',
     fontWeight: 'bold',
+    marginTop: '-3rem',
   },
   icon: {
     height: '24rem',
@@ -31,7 +32,7 @@ const styles = EStyleSheet.create({
     paddingVertical: '16hrem',
     width: '100%',
     marginTop: 0,
-    height: '56rem',
+    height: '58rem',
   },
 });
 
